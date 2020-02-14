@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+  </head>
+  <body>
+
+
+    <br> <br>
+
+
+    <center>
+
+
+        <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input id="input_email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input id="password1"input="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"><br>
+
+              <input id="password2"input="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password Again">
+               </div>
+            
+            <button id="go" type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          
+    </center>
+
+
+
+    <script>
+// Javascript PLACEEEEEEEEEEE!!!//
+
+
+
+
+// when you click
+    $("#go").click(function(){
+
+        // variables when you click
+
+        var email = document.getElementById('input_email').value;
+
+
+var password = document.getElementById('password1').value;
+
+var password2 = document.getElementById('password2').value;
+
+// regular expression
+        regex_email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+  
+regex_password = /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/;
+
+
+// conditions
+if(email.match(regex_email) && password.match(regex_password) && password == password2 ){
+
+alert("everything is ok! welcome!");
+}
+else{
+
+        if (email.match(regex_email)){
+
+        }
+        else{
+
+            alert("Check Your Email Address")
+        }
+
+        if(password.match(regex_password)){
+
+
+        }
+else{
+
+            alert("Type strong password please")
+
+        }
+
+        if (password == password2){
+
+
+        }
+        else{
+
+            alert("The Password is diffrent")
+        }
+
+
+
+
+    }   
+
+        });
+
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
