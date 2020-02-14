@@ -21,7 +21,7 @@
 
     <center>
 
-
+      <h6 style="color:red;" id="error"></h6>
         <form>
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
@@ -49,6 +49,9 @@
 
 
 // when you click
+      
+      
+      
     $("#go").click(function(){
       
       // Don't Submit:
@@ -56,7 +59,8 @@
 
 
         // variables when you click
-
+        var errormessage = "";
+      
         var email = $('#input_email').val();
 
         var password = $('#password1').val();
@@ -64,51 +68,46 @@
         var password2 = $('#password2').val();
 
 // regular expression
-        regex_email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+        var regex_email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
   
-regex_password = /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/;
-
+        var regex_password = /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/;
 
 // conditions
       
+    
+  
+        if (!email.match(regex_email)){
+        errormessage += " <br> email is not valid";
+        }
+     
+
+        if(!password.match(regex_password)){
+
+        errormessage += " <br> write a strong password please!";
+
+        }
+
+
+        if (password != password2){
+        errormessage += " <br> Passwords is not match!";
+
+
+        }
+
+$('#error').html(errormessage);
       
-if(email.match(regex_email) && password.match(regex_password) && password == password2 ){
-
-alert("everything is ok! welcome!");
-}
-else{
-
-        if (email.match(regex_email)){
-
-        }
-        else{
-
-            alert("Check Your Email Address")
-        }
-
-        if(password.match(regex_password)){
-
-
-        }
-else{
-
-            alert("Type strong password please")
-
-        }
-
-        if (password == password2){
-
-
-        }
-        else{
-
-            alert("The Password is diffrent")
-        }
+      
+      if(errormessage == ""){
+       alert("Welcome!");
+        
+        // Anything you want
+      }
+     
 
 
 
 
-    }   
+      
 
         });
 
