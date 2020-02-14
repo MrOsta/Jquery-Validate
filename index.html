@@ -57,12 +57,11 @@
 
         // variables when you click
 
-        var email = document.getElementById('input_email').value;
+        var email = $('input_email').val();
 
-
-var password = document.getElementById('password1').value;
-
-var password2 = document.getElementById('password2').value;
+        var password = $('password1').val();
+        
+        var password2 = $('password2').val();
 
 // regular expression
         regex_email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
