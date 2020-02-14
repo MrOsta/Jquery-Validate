@@ -50,6 +50,10 @@
 
 // when you click
     $("#go").click(function(){
+      
+      // Don't Submit:
+      event.preventDefault();
+
 
         // variables when you click
 
@@ -67,6 +71,8 @@ regex_password = /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*
 
 
 // conditions
+      
+      
 if(email.match(regex_email) && password.match(regex_password) && password == password2 ){
 
 alert("everything is ok! welcome!");
